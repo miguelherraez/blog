@@ -3,7 +3,7 @@ title: Enumeracion
 published: true
 ---
 
-#[](#header-1)Enumeracion
+# [](#header-1)Enumeracion
 
 1.-Crear una carpeta para tener el proceso documentado.
 
@@ -11,9 +11,7 @@ published: true
 
 3.-Le hacemos un ping a la maquina que queramos enumerar para saber si esta activa y si tenemos conexion:
 
-```bash
 	- ping -c 10.10.10.233
-```
 3.1.-Con el ttl que obtenemos de este ping podemos saber que tipo de SO usa la maquina:
 	
 	OS	TTL
@@ -28,6 +26,8 @@ published: true
 
 	- nmap 10.10.10.233 -p- --open -T5 -v -n -oG allPorts
 	
+-Leyenda
+
 	-p- = Para escanear todos los puertos, si no se pone se escanean los 1000 puertos mas comunes.
 	--open = Para devolver unicamente los puertos abiertos.
 	-T5 = Cuanto mayor sea el numero mayor es la velocidad del escaneo pero a su vez mas ruidoso es este.
@@ -40,6 +40,8 @@ published: true
 6.-Deteccion de version y servicios con nmap:
 
 	-nmap -sC -sV -p"puertos" 10.10.10.233 -oN targeted
+
+-Leyenda
 
 	-sC = Lanza scritps basicos de numeracion.
 	-sV = Detecta la version y servicios de los puertos.
