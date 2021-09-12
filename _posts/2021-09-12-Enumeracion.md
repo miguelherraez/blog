@@ -12,6 +12,7 @@ published: true
 3.-Le hacemos un ping a la maquina que queramos enumerar para saber si esta activa y si tenemos conexion:
 
 	- ping -c 10.10.10.233
+	
 3.1.-Con el ttl que obtenemos de este ping podemos saber que tipo de SO usa la maquina:
 	
 	OS	TTL
