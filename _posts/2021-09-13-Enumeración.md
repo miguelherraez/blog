@@ -1,5 +1,5 @@
 ---
-title: Fuzzing
+title: Enumercación
 published: true
 ---
 
@@ -49,6 +49,27 @@ Si con esto no encontramos nada de donde tirar podemos probar a buscar subdomini
   	-gobuster vhost -u http://´ip´/ -w subdomains-top1million-110000.txt
  
 Este diccionario no esta por defecto en parrot pero podemos descargarlo desde su repositorio de github.
+
+# [](#header-1) Reconocimiento Wordpress
+
+-WPSCAN : Es una herramienta que nos permite escanear una url para detectar posibles vulnerabilidades ademas de otros datos 
+	  potencialmente interesantes.
+	
+	- wpscan --url http://url.com -e vp,u
+
+-Leyenda
+
+	--url = Indica la url a escanear.
+	-e = Indica que queremos enumerar despues de escanear la url. Vp, vulnerabilities. U, possible users.
+
+-WPSEKU.PY : Esta herramienta no esta instalada en parrot por defecto y habria que descargarla desde su repositorio en github
+	     Para usarla vale con ejecutar el siguiente comando:
+
+	   - python3 wpseku.py -u http://url.com 
+
+-wp/wp-content/ : Todos los servidores wordpress tienen este directorio donde estan los distintos plugins instalados, 
+		  no tiene permisos de lectura pero si no devuelve codigo de error significa que existe. Este directorio se puede 
+		  fuzzear con wpscan o de forma manual usando wfuzz y un diccionario de plugins de wp.
 
 
 
